@@ -26,6 +26,8 @@ function playRound(humanChoice,computerChoice){
     humanChoice = humanChoice.toLowerCase()
     if(humanChoice == "rock" && computerChoice == "rock"){
         console.log("You tie! Rock ties Rock")
+        humanScore++
+        computerScore++
     }
     else if(humanChoice == "rock" && computerChoice == "paper"){
         console.log("You lose! Paper beats Rock")
@@ -41,6 +43,8 @@ function playRound(humanChoice,computerChoice){
     }
     else if(humanChoice == "paper" && computerChoice == "paper"){
         console.log("You tie! Paper ties Paper")
+        humanScore++
+        computerScore++
     }
     else if(humanChoice == "paper" && computerChoice == "scissors"){
         console.log("You lose! Scissors beats Paper")
@@ -56,6 +60,8 @@ function playRound(humanChoice,computerChoice){
     }
     else if(humanChoice == "scissors" && computerChoice == "scissors"){
         console.log("You tie! Scissors ties Scissors")
+        humanScore++
+        computerScore++
     }
 }
 function playGame(){
