@@ -24,8 +24,6 @@ function getHumanChoice(){
 }
 function playRound(humanChoice,computerChoice){
     humanChoice = humanChoice.toLowerCase()
-    console.log(humanChoice)
-    console.log(computerChoice)
     if(humanChoice == "rock" && computerChoice == "rock"){
         console.log("You tie! Rock ties Rock")
     }
