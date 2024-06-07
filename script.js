@@ -23,3 +23,44 @@ function getHumanChoice(){
     let move = prompt("Choice rock, paper, or scissors")
     return move
 }
+function playRound(humanChoice,computerChoice){
+    humanChoice = humanChoice.toLowerCase()
+    console.log(humanChoice)
+    console.log(computerChoice)
+    if(humanChoice == "rock" && computerChoice == "rock"){
+        console.log("You tie! Rock ties Rock")
+    }
+    else if(humanChoice == "rock" && computerChoice == "paper"){
+        console.log("You lose! Paper beats Rock")
+        computerScore++
+    }
+    else if(humanChoice == "rock" && computerChoice == "scissors"){
+        console.log("You win! Rock beats Scissors")
+        humanScore++
+    }
+    else if(humanChoice == "paper" && computerChoice == "rock"){
+        console.log("You win! Paper beats Rock")
+        humanScore++
+    }
+    else if(humanChoice == "paper" && computerChoice == "paper"){
+        console.log("You tie! Paper ties Paper")
+    }
+    else if(humanChoice == "paper" && computerChoice == "scissors"){
+        console.log("You lose! Scissors beats Paper")
+        computerChoice++
+    }
+    else if(humanChoice == "scissors" && computerChoice == "rock"){
+        console.log("You lose! Rock beats Paper")
+        computerChoice++
+    }
+    else if(humanChoice == "scissors" && computerChoice == "paper"){
+        console.log("You win! Scissors beats Paper")
+        humanScore++
+    }
+    else if(humanChoice == "scissors" && computerChoice == "scissors"){
+        console.log("You tie! Scissors ties Scissors")
+    }
+    console.log(humanScore)
+    console.log(computerScore)
+}
+playRound(getHumanChoice(),getComputerChoice())
