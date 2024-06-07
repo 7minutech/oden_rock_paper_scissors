@@ -16,3 +16,8 @@ function getComputerChoice() {
         return "invalid"
     }
 }
+function getHumanChoice(){
+    //gets user input and returns their move
+    let move = prompt("Choice rock, paper, or scissors")
+    return move
+}
