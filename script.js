@@ -23,6 +23,7 @@ function getHumanChoice(){
     return move
 }
 function playRound(humanChoice,computerChoice){
+    //compares human and computer moves to determine winner
     humanChoice = humanChoice.toLowerCase()
     if(humanChoice == "rock" && computerChoice == "rock"){
         console.log("You tie! Rock ties Rock")
@@ -65,6 +66,8 @@ function playRound(humanChoice,computerChoice){
     }
 }
 function playGame(){
+    //for loop calls play round
+    //display end result once complete
     const NUM_OF_GAMES = 5
     for(let i = 0; i<NUM_OF_GAMES;i++){
         playRound(getHumanChoice(),getComputerChoice())
