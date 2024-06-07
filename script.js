@@ -1,3 +1,5 @@
+humanScore = 0
+computerScore = 0
 function getComputerChoice() {
     // generates number between 1 and 3
     // returns rock paper or scissors
