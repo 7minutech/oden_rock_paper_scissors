@@ -4,7 +4,6 @@ function getComputerChoice() {
     // generates number between 1 and 3
     // returns rock paper or scissors
     let rnum = Math.floor(Math.random() * 3) + 1
-    console.log(rnum)
     if(rnum == 1){
         return "rock"
     }
@@ -60,7 +59,5 @@ function playRound(humanChoice,computerChoice){
     else if(humanChoice == "scissors" && computerChoice == "scissors"){
         console.log("You tie! Scissors ties Scissors")
     }
-    console.log(humanScore)
-    console.log(computerScore)
 }
 playRound(getHumanChoice(),getComputerChoice())
