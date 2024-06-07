@@ -58,4 +58,19 @@ function playRound(humanChoice,computerChoice){
         console.log("You tie! Scissors ties Scissors")
     }
 }
-playRound(getHumanChoice(),getComputerChoice())
+function playGame(){
+    const NUM_OF_GAMES = 5
+    for(let i = 0; i<NUM_OF_GAMES;i++){
+        playRound(getHumanChoice(),getComputerChoice())
+    }
+    if(humanScore>computerScore){
+        console.log("You won! " + humanScore + " to " + computerScore)
+    }
+    else if(humanScore<computerScore){
+        console.log("You lost! " + computerScore + " to " + humanScore)
+    }
+    else{
+        console.log("You tied! " + computerScore + " to " + humanScore)
+    }
+}
+playGame()
