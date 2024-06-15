@@ -22,7 +22,7 @@ function determineWinner(humanScore,computerScore){
     if(humanScore<computerScore){
         end_message.textContent = "Computer Wins!"
     }
-    else if(humanScore < computerScore){
+    else if(humanScore >computerScore){
         end_message.textContent = "Player Wins!"
 
     }
