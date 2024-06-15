@@ -35,11 +35,11 @@ function playRound(humanChoice,computerChoice){
     const MAX_ROUNDS = 4;
     //compares human and computer moves to determine winner
     
-    if(humanChoice == "rock" && computerChoice == "scissors" || humanChoice == "paper" && computerChoice == "rock",
-        humanChoice == "scissors" && computerChoice == "paper"){
+    if((humanChoice == "rock" && computerChoice == "scissors") 
+        || (humanChoice == "paper" && computerChoice == "rock")
+        || (humanChoice == "scissors" && computerChoice == "paper")){
         message.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
         humanScore++
-        computerScore++
     }
     else if(humanChoice == computerChoice){
         message.textContent = `You Tie! ${playerChoice} ties ${computerChoice}`;
