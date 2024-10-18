@@ -6,6 +6,7 @@ body{
   justify-content: center;
   height: 100vh;
   font-family: "Chewy",  Helvetica, Arial, sans-serif;
+  color: #ECEFF1;
 }
 .main{
   display: flex;
@@ -43,3 +44,4 @@ body{
   justify-content: space-evenly;
   font-size: 1.4em;
 }
+
