@@ -75,7 +75,6 @@ function playRound(humanChoice,computerChoice){
 */
 const menu = document.querySelector("body")
 //style body
-menu.setAttribute("style","background-color: rgb(32,32,32);color: white;font-size: 24px;");
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
@@ -83,11 +82,6 @@ const message = document.querySelector("#message");
 const score = document.querySelector("#score-board")
 const end_message = document.querySelector("#end-board")
 const buttons = document.querySelectorAll("button");
-//style buttons
-buttons.forEach(button => {
-    button.setAttribute("style","font-size: 18px");
-})
-message.setAttribute("style", "margin-top: 10px");
 //once button clicked call playRound()
 menu.addEventListener("click", (event) => {
     let target = event.target;
