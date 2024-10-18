@@ -56,17 +56,20 @@ function playRound(humanChoice,computerChoice){
     }
     document.getElementById("human_move_img").src = get_move_img_src(humanChoice);
     document.getElementById("computer_move_img").src = get_move_img_src(computerChoice);
+    document.getElementById("human_move_display").textContent = humanChoice
+    document.getElementById("computer_move_display").textContent = computerChoice
+
 }
 
 function get_move_img_src(move){
     if (move == "rock"){
-        return "imgs/rock_scaled_down.jpeg"
+        return "imgs/rock_scaled_down_square.jpeg"
     }
     else if (move == "paper"){  
-        return "imgs/paper_scaled_down.jpg"
+        return "imgs/paper_scaled_down_square.jpg"
     }
     else{
-        return "imgs/scissors_scaled_down.jpeg"
+        return "imgs/scissors_scaled_down_square.jpeg"
     }
 }
 
