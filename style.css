@@ -34,3 +34,8 @@ body{
 #computer_move_text_display{
   width: 300px;
 }
+.score-board{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.4em;
+}
