@@ -1,0 +1,27 @@
+
+body{
+  background-color: #b1987a;
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+  border: solid, 4px, purple;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-top:  -200px;
+}
+.moves, .messages{
+  border: solid, 2px, blue;
+}
+
+.moves{
+  display: flex;
+  gap: 100px;
+}
+
+
+
