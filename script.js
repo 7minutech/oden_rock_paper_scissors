@@ -60,9 +60,6 @@ function playRound(humanChoice,computerChoice){
     computer_score.textContent = `Computer Score: ${computerScore}`;
     document.getElementById("human_move_img").src = get_move_img_src(humanChoice);
     document.getElementById("computer_move_img").src = get_move_img_src(computerChoice);
-    document.getElementById("human_move_text_display").textContent = "Player's Move"
-    document.getElementById("computer_move_text_display").textContent = "Computer's Move"
-
 }
 
 function get_move_img_src(move){
@@ -136,6 +133,10 @@ const computer_move = document.querySelector("#computer_move_img")
 const PLAYER_WIN = 0
 const TIE = 1
 const PLAYER_LOSS = 2
+player_score.textContent = `Player Score: ${humanScore}`;
+computer_score.textContent = `Computer Score: ${computerScore}`;
+
+
 //once button clicked call playRound()
 menu.addEventListener("click", (event) => {
     let target = event.target;
