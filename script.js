@@ -56,8 +56,6 @@ function playRound(humanChoice,computerChoice){
     }
     document.getElementById("human_move_img").src = get_move_img_src(humanChoice);
     document.getElementById("computer_move_img").src = get_move_img_src(computerChoice);
-    document.getElementById("human_move_display").textContent = humanChoice
-    document.getElementById("computer_move_display").textContent = computerChoice
     document.getElementById("human_move_text_display").textContent = "Player's Move"
     document.getElementById("computer_move_text_display").textContent = "Computer's Move"
 
