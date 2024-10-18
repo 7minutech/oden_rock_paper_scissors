@@ -40,13 +40,18 @@ function playRound(humanChoice,computerChoice){
         || (humanChoice == "scissors" && computerChoice == "paper")){
         message.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
+        set_score_color(PLAYER_WIN,player_score,computer_score)
     }
     else if(humanChoice == computerChoice){
         message.textContent = `You Tie! ${playerChoice} ties ${computerChoice}`;
+        set_score_color(TIE,player_score,computer_score)
+
     }
     else{
         message.textContent = `You lose ${computerChoice} beats ${playerChoice}`;
         computerScore++;
+        set_score_color(PLAYER_LOSS,player_score,computer_score)
+
     }
     if(humanScore > MAX_ROUNDS || computerScore > MAX_ROUNDS){
         determineWinner(humanScore,computerScore);
@@ -69,6 +74,32 @@ function get_move_img_src(move){
     }
     else{
         return "imgs/scissors_scaled_down_square.jpeg"
+    }
+}
+
+function set_winner_green(score){
+    score.style.color = "#28A745"
+}
+function set_loser_red(score){
+    score.style.color = "#DC3545"
+}
+function set_tie_yellow(score){
+    score.style.color = "#FFC107"
+}
+function set_score_color(result, human, computer){
+    switch(result){
+        case PLAYER_WIN:
+            set_winner_green(human);
+            set_loser_red(computer);
+            break;
+        case TIE:
+            set_tie_yellow(human);
+            set_tie_yellow(computer);
+            break;
+        case PLAYER_LOSS:
+            set_loser_red(human);
+            set_winner_green(computer);
+            break;
     }
 }
 
@@ -102,6 +133,9 @@ const end_message = document.querySelector("#end-board")
 const buttons = document.querySelectorAll("button");
 const human_move = document.querySelector("#human_move_img")
 const computer_move = document.querySelector("#computer_move_img")
+const PLAYER_WIN = 0
+const TIE = 1
+const PLAYER_LOSS = 2
 //once button clicked call playRound()
 menu.addEventListener("click", (event) => {
     let target = event.target;
