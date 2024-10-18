@@ -50,10 +50,11 @@ function playRound(humanChoice,computerChoice){
         message.textContent = `You lose ${computerChoice} beats ${playerChoice}`;
         computerScore++;
     }
-    score.textContent = `Player Score: ${humanScore}\nComputer Score: ${computerScore}`;
     if(humanScore > MAX_ROUNDS || computerScore > MAX_ROUNDS){
         determineWinner(humanScore,computerScore);
     }
+    player_score.textContent = `Player Score: ${humanScore}`;
+    computer_score.textContent = `Computer Score: ${computerScore}`;
     document.getElementById("human_move_img").src = get_move_img_src(humanChoice);
     document.getElementById("computer_move_img").src = get_move_img_src(computerChoice);
     document.getElementById("human_move_text_display").textContent = "Player's Move"
@@ -97,7 +98,8 @@ const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
 const message = document.querySelector("#message");
-const score = document.querySelector("#score-board")
+const player_score = document.querySelector("#player_score")
+const computer_score = document.querySelector("#computer_score")
 const end_message = document.querySelector("#end-board")
 const buttons = document.querySelectorAll("button");
 const human_move = document.querySelector("#human_move_img")
