@@ -31,5 +31,6 @@ body{
   flex-direction: column;
   width: 125px;
 }
-
-
+#computer_move_text_display{
+  width: 300px;
+}
