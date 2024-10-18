@@ -18,17 +18,16 @@ function getComputerChoice() {
         return "invalid"
     }
 }
-function determineWinner(humanScore,computerScore){
+function game_end_text(humanScore,computerScore){
     if(humanScore<computerScore){
-        end_message.textContent = "Computer Wins!"
+        return "Computer Wins!"
     }
     else if(humanScore >computerScore){
-        end_message.textContent = "Player Wins!"
+        return "Player Wins!"
 
     }
     else{
-        end_message.textContent = "It's a Tie!"
-
+        return "It's a Tie!"
     }
 }
 function playRound(humanChoice,computerChoice){
@@ -38,23 +37,18 @@ function playRound(humanChoice,computerChoice){
     if((humanChoice == "rock" && computerChoice == "scissors") 
         || (humanChoice == "paper" && computerChoice == "rock")
         || (humanChoice == "scissors" && computerChoice == "paper")){
-        message.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
         set_score_color(PLAYER_WIN,player_score,computer_score)
     }
     else if(humanChoice == computerChoice){
-        message.textContent = `You Tie! ${playerChoice} ties ${computerChoice}`;
         set_score_color(TIE,player_score,computer_score)
-
     }
     else{
-        message.textContent = `You lose ${computerChoice} beats ${playerChoice}`;
         computerScore++;
         set_score_color(PLAYER_LOSS,player_score,computer_score)
-
     }
     if(humanScore > MAX_ROUNDS || computerScore > MAX_ROUNDS){
-        determineWinner(humanScore,computerScore);
+        final_message = game_end_text(humanScore,computerScore);
     }
     player_score.textContent = `Player Score: ${humanScore}`;
     computer_score.textContent = `Computer Score: ${computerScore}`;
