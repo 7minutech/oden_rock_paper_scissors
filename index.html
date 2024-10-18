@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -12,24 +13,30 @@
         <div class = "moves">
             <div>
                 <label for="image">Rock</label>
-                <input type="image" id="rock" src="imgs/rock_scaled_down.jpeg">
+                <input type="image" id="rock" src="imgs/rock_scaled_down_square.jpeg">
             </div>
             <div>
                 <label for="image">Paper</label>
 
-                <input type="image" id ="paper" src="imgs/paper_scaled_down.jpg">
+                <input type="image" id ="paper" src="imgs/paper_scaled_down_square.jpg">
             </div>
             <div>
                 <label for="image">Scissors</label>
 
-                <input type="image" id="scissors" src="imgs/scissors_scaled_down.jpeg">
+                <input type="image" id="scissors" src="imgs/scissors_scaled_down_square.jpeg">
             </div>
         </div>
         <div class = "messages">
-            <div id="human_move"></div>
-                <img src="" alt="" id="human_move_img">
-            <div id = "computer_move"></div>
-                <img src="" alt="" id="computer_move_img">
+            <div class = "move_displays">
+                <div id="human_move" class="move_display">
+                    <label for="image" id="human_move_display"></label>
+                    <img src="" alt="" id="human_move_img">
+                </div>
+                <div id = "computer_move" class="move_display">
+                    <label for="image" id="computer_move_display"></label>
+                    <img src="" alt="" id="computer_move_img">
+                </div>
+            </div>
             <div id="message"></div>
             <div id="score-board"></div>
             <div id="end-board"></div>
