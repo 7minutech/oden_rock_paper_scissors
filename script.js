@@ -39,7 +39,7 @@ function playRound(humanChoice,computerChoice){
         || (humanChoice == "paper" && computerChoice == "rock")
         || (humanChoice == "scissors" && computerChoice == "paper")){
         message.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
-        humanScore++
+        humanScore++;
     }
     else if(humanChoice == computerChoice){
         message.textContent = `You Tie! ${playerChoice} ties ${computerChoice}`;
@@ -54,7 +54,22 @@ function playRound(humanChoice,computerChoice){
     if(humanScore > MAX_ROUNDS || computerScore > MAX_ROUNDS){
         determineWinner(humanScore,computerScore);
     }
+    document.getElementById("human_move_img").src = get_move_img_src(humanChoice);
+    document.getElementById("computer_move_img").src = get_move_img_src(computerChoice);
 }
+
+function get_move_img_src(move){
+    if (move == "rock"){
+        return "imgs/rock_scaled_down.jpeg"
+    }
+    else if (move == "paper"){  
+        return "imgs/paper_scaled_down.jpg"
+    }
+    else{
+        return "imgs/scissors_scaled_down.jpeg"
+    }
+}
+
 /*function playGame(){
     //for loop calls play round
     //display end result once complete
@@ -82,12 +97,13 @@ const message = document.querySelector("#message");
 const score = document.querySelector("#score-board")
 const end_message = document.querySelector("#end-board")
 const buttons = document.querySelectorAll("button");
+const human_move = document.querySelector("#human_move_img")
+const computer_move = document.querySelector("#computer_move_img")
 //once button clicked call playRound()
 menu.addEventListener("click", (event) => {
     let target = event.target;
     switch(target.id){
         case "rock":
-            
             playerChoice = "rock";
             playRound(playerChoice,getComputerChoice())
             break;
