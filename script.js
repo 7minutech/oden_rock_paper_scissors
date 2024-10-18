@@ -43,8 +43,6 @@ function playRound(humanChoice,computerChoice){
     }
     else if(humanChoice == computerChoice){
         message.textContent = `You Tie! ${playerChoice} ties ${computerChoice}`;
-        humanScore++;
-        computerScore++;
     }
     else{
         message.textContent = `You lose ${computerChoice} beats ${playerChoice}`;
