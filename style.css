@@ -33,6 +33,10 @@ body{
   flex-direction: column;
   margin: 20px;
 }
+.move:hover{
+  transition: filter 0.3s ease;
+  filter: brightness(0.75);
+}
 .move_displays{
   display: flex;  
   justify-content: space-evenly;
@@ -68,3 +72,4 @@ button{
 button:hover{
   background-color: #c82333;
 }
+
