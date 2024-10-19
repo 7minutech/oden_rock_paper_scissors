@@ -126,24 +126,16 @@ function is_player_tie(player_score, computer_score){
 }
   
 const menu = document.querySelector("body")
-const rockButton = document.querySelector("#rock");
-const paperButton = document.querySelector("#paper");
-const scissorsButton = document.querySelector("#scissors");
-const message = document.querySelector("#message");
 const player_score = document.querySelector("#player_score")
 const computer_score = document.querySelector("#computer_score")
-const end_message = document.querySelector("#end-board")
-const buttons = document.querySelectorAll("button");
 const human_move_img = document.getElementById("human_move_img")
 const computer_move_img = document.getElementById("computer_move_img")
-const move_input = document.querySelectorAll("#move")
 const result_message = document.getElementById("final_message")
 const PLAYER_WIN = 0
 const TIE = 1
 const PLAYER_LOSS = 2
 const RESTART = 3;
 const MAX_ROUNDS = 4;
-
 player_score.textContent = `Player Score: ${humanScore}`;
 computer_score.textContent = `Computer Score: ${computerScore}`;
 
