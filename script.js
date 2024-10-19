@@ -61,6 +61,7 @@ function restart(){
     player_score.textContent = `Player Score: ${humanScore}`;
     computer_score.textContent = `Computer Score: ${computerScore}`;
     set_score_color(RESTART, player_score, computer_score);
+    result_message.textContent = ""
 }
 
 function get_move_img_src(move){
@@ -150,22 +151,24 @@ computer_score.textContent = `Computer Score: ${computerScore}`;
 //once button clicked call playRound()
 menu.addEventListener("click", (event) => {
     let target = event.target;
-    switch(target.id){
-        case "rock":
-            playerChoice = "rock";
-            playRound(playerChoice,getComputerChoice());
-            break;
-        case "paper":   
-            playerChoice = "paper";
-            playRound(playerChoice,getComputerChoice());
-            break;
-        case "scissors":
-            playerChoice = "scissors";
-            playRound(playerChoice,getComputerChoice());
-            break;
-        case "restartButton":
-            restart();
-            break;
+    if(!is_game_over(humanScore,computerScore)){
+        switch(target.id){
+            case "rock":
+                playerChoice = "rock";
+                playRound(playerChoice,getComputerChoice());
+                break;
+            case "paper":   
+                playerChoice = "paper";
+                playRound(playerChoice,getComputerChoice());
+                break;
+            case "scissors":
+                playerChoice = "scissors";
+                playRound(playerChoice,getComputerChoice());
+                break;
+        }
+    }
+    if(target.id == "restartButton"){
+        restart();
     }
 })
 
