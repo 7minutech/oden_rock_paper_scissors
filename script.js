@@ -94,6 +94,21 @@ function is_game_over(player_score, computer_score){
         return true
     }
 }
+function is_player_win(player_score, computer_score){
+    if (player_score > computer_score){
+        return true
+    }
+}
+function is_player_loss(player_score, computer_score){
+    if (player_score < computer_score){
+        return true
+    }
+}
+function is_player_tie(player_score, computer_score){
+    if (player_score == computer_score){
+        return true
+    }
+}
   
 const menu = document.querySelector("body")
 const rockButton = document.querySelector("#rock");
