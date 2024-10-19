@@ -31,6 +31,8 @@ function game_end_text(humanScore,computerScore){
     }
 }
 function playRound(humanChoice,computerChoice){
+    human_move_img.src = ""
+    delay_move_img()
     const MAX_ROUNDS = 4;
     //compares human and computer moves to determine winner
     
@@ -52,8 +54,8 @@ function playRound(humanChoice,computerChoice){
     }
     player_score.textContent = `Player Score: ${humanScore}`;
     computer_score.textContent = `Computer Score: ${computerScore}`;
-    document.getElementById("human_move_img").src = get_move_img_src(humanChoice);
-    document.getElementById("computer_move_img").src = get_move_img_src(computerChoice);
+    human_move_img.src = get_move_img_src(humanChoice);
+    computer_move_img.src = get_move_img_src(computerChoice);
 }
 
 function get_move_img_src(move){
@@ -93,7 +95,11 @@ function set_score_color(result, human, computer){
             break;
     }
 }
-
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+const delay_move_img = async() => {
+    await(2000)
+}
+  
 /*function playGame(){
     //for loop calls play round
     //display end result once complete
@@ -122,8 +128,8 @@ const player_score = document.querySelector("#player_score")
 const computer_score = document.querySelector("#computer_score")
 const end_message = document.querySelector("#end-board")
 const buttons = document.querySelectorAll("button");
-const human_move = document.querySelector("#human_move_img")
-const computer_move = document.querySelector("#computer_move_img")
+const human_move_img = document.getElementById("human_move_img")
+const computer_move_img = document.getElementById("computer_move_img")
 const PLAYER_WIN = 0
 const TIE = 1
 const PLAYER_LOSS = 2
