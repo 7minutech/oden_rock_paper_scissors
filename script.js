@@ -89,6 +89,11 @@ function set_score_color(result, human, computer){
             computer.style.color = "#ECEFF1";
     }
 }
+function is_game_over(player_score, computer_score){
+    if (player_score > 4 || computer_score > 4){
+        return true
+    }
+}
   
 const menu = document.querySelector("body")
 const rockButton = document.querySelector("#rock");
