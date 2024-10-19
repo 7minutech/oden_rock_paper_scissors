@@ -17,12 +17,12 @@ body{
 }
 
 .main > div{
-  border-left: solid 2px #A8A9AD;
-  border-right: solid 2px #A8A9AD;
-  border-top: solid 2px #A8A9AD;
+  border-left: solid 4px #A8A9AD;
+  border-right: solid 4px #A8A9AD;
+  border-top: solid 4px #A8A9AD;
 }
 .messages{
-  border-bottom: solid 2px #A8A9AD;
+  border-bottom: solid 4px #A8A9AD;
 }
 .moves{
   display: flex;
