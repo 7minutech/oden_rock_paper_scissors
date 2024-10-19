@@ -18,23 +18,8 @@ function getComputerChoice() {
         return "invalid"
     }
 }
-function game_end_text(humanScore,computerScore){
-    if(humanScore<computerScore){
-        return "Computer Wins!"
-    }
-    else if(humanScore >computerScore){
-        return "Player Wins!"
 
-    }
-    else{
-        return "It's a Tie!"
-    }
-}
 function playRound(humanChoice,computerChoice){
-    human_move_img.src = ""
-    delay_move_img()
-    const MAX_ROUNDS = 4;
-    //compares human and computer moves to determine winner
     
     if((humanChoice == "rock" && computerChoice == "scissors") 
         || (humanChoice == "paper" && computerChoice == "rock")
@@ -49,13 +34,19 @@ function playRound(humanChoice,computerChoice){
         computerScore++;
         set_score_color(PLAYER_LOSS,player_score,computer_score)
     }
-    if(humanScore > MAX_ROUNDS || computerScore > MAX_ROUNDS){
-        final_message = game_end_text(humanScore,computerScore);
-    }
     player_score.textContent = `Player Score: ${humanScore}`;
     computer_score.textContent = `Computer Score: ${computerScore}`;
     human_move_img.src = get_move_img_src(humanChoice);
     computer_move_img.src = get_move_img_src(computerChoice);
+}
+
+function restart(){
+    humanScore = 0
+    computerScore = 0
+    playerChoice = ""
+    player_score.textContent = `Player Score: ${humanScore}`;
+    computer_score.textContent = `Computer Score: ${computerScore}`;
+    set_score_color(RESTART, player_score, computer_score);
 }
 
 function get_move_img_src(move){
@@ -93,33 +84,13 @@ function set_score_color(result, human, computer){
             set_loser_red(human);
             set_winner_green(computer);
             break;
+        case RESTART:
+            human.style.color = "#ECEFF1";
+            computer.style.color = "#ECEFF1";
     }
-}
-const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-const delay_move_img = async() => {
-    await(2000)
 }
   
-/*function playGame(){
-    //for loop calls play round
-    //display end result once complete
-    const NUM_OF_GAMES = 5
-    for(let i = 0; i<NUM_OF_GAMES;i++){
-        playRound(getHumanChoice(),getComputerChoice())
-    }
-    if(humanScore>computerScore){
-        console.log("You won! " + humanScore + " to " + computerScore)
-    }
-    else if(humanScore<computerScore){
-        console.log("You lost! " + computerScore + " to " + humanScore)
-    }
-    else{
-        console.log("You tied! " + computerScore + " to " + humanScore)
-    }
-}
-*/
 const menu = document.querySelector("body")
-//style body
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
@@ -130,9 +101,13 @@ const end_message = document.querySelector("#end-board")
 const buttons = document.querySelectorAll("button");
 const human_move_img = document.getElementById("human_move_img")
 const computer_move_img = document.getElementById("computer_move_img")
+const move_input = document.querySelectorAll("#move")
 const PLAYER_WIN = 0
 const TIE = 1
 const PLAYER_LOSS = 2
+const RESTART = 3;
+const MAX_ROUNDS = 4;
+
 player_score.textContent = `Player Score: ${humanScore}`;
 computer_score.textContent = `Computer Score: ${computerScore}`;
 
@@ -143,16 +118,18 @@ menu.addEventListener("click", (event) => {
     switch(target.id){
         case "rock":
             playerChoice = "rock";
-            playRound(playerChoice,getComputerChoice())
+            playRound(playerChoice,getComputerChoice());
             break;
-        case "paper":
-            
+        case "paper":   
             playerChoice = "paper";
-            playRound(playerChoice,getComputerChoice())
+            playRound(playerChoice,getComputerChoice());
             break;
         case "scissors":
             playerChoice = "scissors";
-            playRound(playerChoice,getComputerChoice())
+            playRound(playerChoice,getComputerChoice());
+            break;
+        case "restartButton":
+            restart();
             break;
     }
 })
