@@ -34,6 +34,20 @@ function playRound(humanChoice,computerChoice){
         computerScore++;
         set_score_color(PLAYER_LOSS,player_score,computer_score)
     }
+    if (is_game_over(humanScore,computerScore)){
+        if (is_player_win(humanScore,computerScore)){
+            result_message.textContent = "You won! easy competition";
+            result_message.style.color = "#28A745";
+        }
+        if (is_player_loss(humanScore,computerScore)){
+            result_message.textContent = "You lost, maybe next time";
+            result_message.style.color = "#DC3545";
+        }
+        if (is_player_tie(humanScore,computerScore)){
+            result_message.textContent = "You tied, fair game";
+            result_message.style.color = "#FFC107";
+        }
+    }
     player_score.textContent = `Player Score: ${humanScore}`;
     computer_score.textContent = `Computer Score: ${computerScore}`;
     human_move_img.src = get_move_img_src(humanChoice);
@@ -122,6 +136,7 @@ const buttons = document.querySelectorAll("button");
 const human_move_img = document.getElementById("human_move_img")
 const computer_move_img = document.getElementById("computer_move_img")
 const move_input = document.querySelectorAll("#move")
+const result_message = document.getElementById("final_message")
 const PLAYER_WIN = 0
 const TIE = 1
 const PLAYER_LOSS = 2
