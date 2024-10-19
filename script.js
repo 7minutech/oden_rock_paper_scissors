@@ -62,6 +62,8 @@ function restart(){
     computer_score.textContent = `Computer Score: ${computerScore}`;
     set_score_color(RESTART, player_score, computer_score);
     result_message.textContent = ""
+    human_move_img.src = "imgs/waiting_for_move_scaled.jpeg"
+    computer_move_img.src = "imgs/waiting_for_move_scaled.jpeg"
 }
 
 function get_move_img_src(move){
