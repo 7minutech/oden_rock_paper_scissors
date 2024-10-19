@@ -51,4 +51,20 @@ body{
   justify-content: space-evenly;
   font-size: 1.4em;
 }
-
+.restart{
+  display: flex;
+  justify-content: center;
+}
+.restart_items{
+  margin: 20px;
+}
+button{
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #DC3545;
+  color: #ECEFF1;  
+}
+button:hover{
+  background-color: #c82333;
+}
